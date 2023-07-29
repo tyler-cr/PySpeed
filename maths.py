@@ -1,5 +1,5 @@
 import math
-import haversine as hv
+'''import haversine as hv'''
 import DATA as d
 
 
@@ -26,17 +26,13 @@ def getspeed():
     hours = d.SMALL_TIME_INTERVAL/3600
     return distance/hours
 
+def reset():
+    global FASTEST_SPEED
+    global AVERAGE_SPEED
+    global CURRENT_SPEED
+
+    FASTEST_SPEED, AVERAGE_SPEED, CURRENT_SPEED = 0, 0, 0
+
 '''def test():
     global ltest 
     ltest = ltest[1:]'''
-
-
-
-print(d.TIME_UNITS)
-print(d.CURRENT_SPEED)
-
-d.LAST_TWO_GPS[0] = [4,1]; d.LAST_TWO_GPS[1] = [5,1]
-d.CURRENT_SPEED = getspeed()
-
-print(getspeed())
-print(d.CURRENT_SPEED)
